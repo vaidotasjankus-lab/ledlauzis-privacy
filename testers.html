@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ledlaužis — Tapk Beta Testuotoju</title>
+    <title>Ledlaužis — Tapk Pirmuoju</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -20,7 +20,8 @@
             text-align: center;
         }
 
-        .logo { font-size: 64px; margin-bottom: 16px; }
+        .logo { margin-bottom: 20px; }
+        .logo img { width: 90px; height: 90px; border-radius: 20px; }
 
         .badge {
             display: inline-block;
@@ -36,19 +37,26 @@
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 900;
+            color: #F2F3FF;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 span {
             background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 16px;
-            line-height: 1.2;
         }
 
         .subtitle {
             color: #8B8FA8;
-            font-size: 18px;
+            font-size: 17px;
             max-width: 500px;
             margin: 0 auto 32px;
         }
@@ -77,107 +85,130 @@
             margin-bottom: 12px;
         }
 
-        .cta-note {
-            color: #4E5068;
-            font-size: 12px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .cta-help {
-            color: #8B8FA8;
-            font-size: 13px;
-        }
-
+        .cta-note { color: #4E5068; font-size: 12px; display: block; margin-bottom: 12px; }
+        .cta-help { color: #8B8FA8; font-size: 13px; }
         .cta-help a { color: #7C6FE0; text-decoration: none; }
 
         .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-
-        .section { padding: 60px 0; }
+        .section { padding: 50px 0; }
 
         .section-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             color: #F2F3FF;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             text-align: center;
         }
 
-        .problem-box {
+        .story-box {
+            background: linear-gradient(135deg, rgba(124,111,224,0.08), rgba(255,94,125,0.05));
+            border: 1px solid rgba(124,111,224,0.2);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .story-box .story-label {
+            color: #7C6FE0;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .story-box p {
+            color: #C4C6D8;
+            font-size: 16px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .story-box .author {
+            margin-top: 16px;
+            color: #8B8FA8;
+            font-size: 13px;
+            font-style: normal;
+        }
+
+        .value-box {
             background: #1A1B26;
             border: 1px solid #2E3048;
             border-radius: 20px;
             padding: 32px;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
-        .problem-box p {
-            color: #8B8FA8;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .problem-box strong { color: #F2F3FF; }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        .feature-card {
-            background: #1A1B26;
-            border: 1px solid #2E3048;
-            border-radius: 16px;
-            padding: 24px;
-        }
-
-        .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature-name { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 6px; }
-        .feature-desc { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
-
-        .testimonial {
-            background: rgba(124, 111, 224, 0.08);
-            border: 1px solid rgba(124, 111, 224, 0.25);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 40px;
-        }
-
-        .testimonial-text {
+        .value-box h3 {
             color: #F2F3FF;
-            font-size: 16px;
-            font-style: italic;
-            line-height: 1.7;
-            margin-bottom: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
-        .testimonial-author { color: #8B8FA8; font-size: 13px; }
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
 
-        .steps { margin-bottom: 40px; }
+        .feature-emoji { font-size: 22px; min-width: 28px; }
+
+        .feature-text h4 {
+            color: #F2F3FF;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .feature-text p { color: #8B8FA8; font-size: 13px; }
+
+        .free-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 8px;
+            padding: 2px 8px;
+            color: #4ECDC4;
+            font-size: 11px;
+            font-weight: 800;
+            margin-left: 6px;
+        }
+
+        .ai-highlight {
+            background: linear-gradient(135deg, rgba(255,179,71,0.1), rgba(124,111,224,0.1));
+            border: 1px solid rgba(255,179,71,0.3);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 8px;
+        }
+
+        .ai-highlight p { color: #FFB347; font-size: 13px; font-weight: 600; }
+
+        .steps { margin-bottom: 32px; }
 
         .step {
             display: flex;
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             align-items: flex-start;
         }
 
         .step-num {
-            min-width: 36px;
-            height: 36px;
+            min-width: 34px;
+            height: 34px;
             background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 13px;
             color: white;
         }
 
-        .step-content h3 { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 4px; }
+        .step-content h3 { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 3px; }
         .step-content p { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
 
         .mission-box {
@@ -188,7 +219,7 @@
             margin-bottom: 24px;
         }
 
-        .mission-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+        .mission-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 10px; }
         .mission-box p { color: #8B8FA8; font-size: 14px; line-height: 1.7; }
         .mission-box strong { color: #F2F3FF; }
 
@@ -197,7 +228,7 @@
             border: 1px solid #2E3048;
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .checklist h3 { color: #F2F3FF; font-size: 15px; font-weight: 700; margin-bottom: 16px; }
@@ -206,38 +237,31 @@
             display: flex;
             gap: 12px;
             align-items: flex-start;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #8B8FA8;
             font-size: 14px;
             line-height: 1.5;
         }
 
         .check-box {
-            min-width: 20px;
-            height: 20px;
+            min-width: 18px;
+            height: 18px;
             border: 2px solid #7C6FE0;
             border-radius: 4px;
             margin-top: 2px;
         }
 
         .safe-box {
-            background: rgba(78, 205, 196, 0.08);
-            border: 1px solid rgba(78, 205, 196, 0.25);
+            background: rgba(78, 205, 196, 0.05);
+            border: 1px solid rgba(78, 205, 196, 0.2);
             border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 40px;
+            padding: 20px;
+            margin-bottom: 32px;
         }
 
-        .safe-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
-        .safe-box ul { color: #8B8FA8; font-size: 14px; padding-left: 20px; line-height: 1.8; }
-
-        .privacy-link {
-            display: inline-block;
-            margin-top: 12px;
-            color: #7C6FE0;
-            font-size: 13px;
-            text-decoration: none;
-        }
+        .safe-box h3 { color: #4ECDC4; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+        .safe-box ul { color: #8B8FA8; font-size: 13px; padding-left: 18px; line-height: 1.8; }
+        .privacy-link { display: inline-block; margin-top: 10px; color: #7C6FE0; font-size: 13px; text-decoration: none; }
 
         .cta-section {
             text-align: center;
@@ -246,8 +270,8 @@
             border-top: 1px solid #2E3048;
         }
 
-        .cta-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
-        .cta-section p { color: #8B8FA8; margin-bottom: 32px; }
+        .cta-section h2 { font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+        .cta-section p { color: #8B8FA8; margin-bottom: 28px; font-size: 15px; }
 
         .footer {
             text-align: center;
@@ -258,97 +282,109 @@
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 32px; }
-            .features-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
 <div class="hero">
-    <div class="logo"><img src="https://vaidotasjankus-lab.github.io/ledlauzis-privacy/Ledai.png" style="width:80px;height:80px;border-radius:18px;" alt="Ledlaužis"></div>
-    <div class="badge">BETA TESTAVIMAS</div>
-    <h1>Ledlaužis</h1>
-    <p class="subtitle">Pirmasis susitikimas su nauju žmogumi daugiau nekels nerimo. Padėk mums sukurti geriausią įrankį pasimatymams.</p>
+    <div class="logo">
+        <img src="https://vaidotasjankus-lab.github.io/ledlauzis-privacy/Ledai.png" alt="Ledlaužis">
+    </div>
+    <div class="badge">UŽDARO KLUBO NARYSTĖ</div>
+    <h1>Nuostabus „match'as", bet pirmasis pasimatymas <span>varo stresą?</span> 🧊</h1>
+    <p class="subtitle">Sukūrėme „Ledlaužį" — programėlę, kuri akimirksniu išsklaido nepatogią tylą ir paverčia pirmąjį susitikimą žaidimu.</p>
     <br>
     <div class="spots-hero">🔥 Liko 8 vietos iš 12</div>
     <br><br>
     <a href="https://forms.gle/QtV4YsG2vsoBnL8b7" class="cta-primary">
-        📝 Užsiregistruoti testuotoju
+        📝 Tapti pirmuoju
     </a>
     <br>
     <span class="cta-note">Nemokama · Oficialus Google Play testavimas · Saugi</span>
-    <span class="cta-help">Kyla problemų jungiantis? Parašykite: <a href="mailto:vaidotas.jankus@gmail.com">vaidotas.jankus@gmail.com</a></span>
+    <span class="cta-help">Kyla problemų? <a href="mailto:vaidotas.jankus@gmail.com">vaidotas.jankus@gmail.com</a></span>
 </div>
 
 <div class="container">
 
     <div class="section">
-        <div class="problem-box">
-            <p>Pirmasis susitikimas su nauju žmogumi — vienas <strong>nepatogiausių momentų</strong>. Tyla, nepatogi tema, nežinai ką sakyti. <strong>Ledlaužis</strong> sprendžia šią problemą — padeda pradėti pokalbį natūraliai ir džiaugsmingai.</p>
+        <div class="story-box">
+            <p class="story-label">KAIP GIMĖ IDĖJA</p>
+            <p>„Idėja gimė geriant kavą su sese. Svarstėme, kodėl šiuolaikiniai pasimatymai po ilgų pokalbių internete gyvai tampa tokie įtempti. Galvojome ir apie mano 17-metį sūnėną — kaip jam padėti lengviau perlipti tą pirmojo kontakto barjerą? Taip gimė šis šiltas ledo tirpiklis."</p>
+            <p class="author">— Vaidotas, „Ledlaužio" kūrėjas</p>
         </div>
 
-        <div class="testimonial">
-            <p class="testimonial-text">„Per pirmą pasimatymą naudojau Pokalbių korteles — tyla dingo akimirksniu. Pasijutome kaip seni draugai."</p>
-            <span class="testimonial-author">— Beta testuotojas, Vilnius</span>
-        </div>
+        <div class="value-box">
+            <h3>Google reikalauja 12 testuotojų, kad galėtume paleisti programėlę visiems. Mainais — visiškas nemokamas priėjimas prie visų funkcijų:</h3>
 
-        <p class="section-title">Ką rasite programėlėje</p>
+            <div class="feature-item">
+                <span class="feature-emoji">🃏</span>
+                <div class="feature-text">
+                    <h4>Pokalbių kortelės <span class="free-badge">NEMOKAMAI</span></h4>
+                    <p>Chill, Giliau ir Drąsiau kategorijos. Kiekviena su psichologo pastaba.</p>
+                </div>
+            </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🃏</div>
-                <div class="feature-name">Pokalbių kortelės</div>
-                <div class="feature-desc">Chill, Giliau ir Drąsiau kategorijos. Kiekviena su psichologo pastaba.</div>
+            <div class="feature-item">
+                <span class="feature-emoji">🔮</span>
+                <div class="feature-text">
+                    <h4>Telepatijos žaidimas <span class="free-badge">NEMOKAMAI</span></h4>
+                    <p>Patikrinkite, ar jūsų mintys sutampa.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-name">Telepatijos testas</div>
-                <div class="feature-desc">Ar jūsų mintys skrieja tuo pačiu dažniu? Sužinokite kartu.</div>
+
+            <div class="feature-item">
+                <span class="feature-emoji">🧠</span>
+                <div class="feature-text">
+                    <h4>Santykių SOS <span class="free-badge">NEMOKAMAI</span></h4>
+                    <p>Psichologo patarimai ir interaktyvios praktikos pasimatymo metu.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🫂</div>
-                <div class="feature-name">Santykių SOS</div>
-                <div class="feature-desc">Psichologo patarimai ir akių kontakto iššūkis.</div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <div class="feature-name">AI Vibe</div>
-                <div class="feature-desc">Dirbtinis intelektas generuoja ledlaužius pagal jūsų situaciją.</div>
+
+            <div class="feature-item">
+                <span class="feature-emoji">✨</span>
+                <div class="feature-text">
+                    <h4>AI Vibe generatorius <span class="free-badge">NEMOKAMAI</span></h4>
+                    <p>Individualūs ledlaužiai pagal jūsų situaciją.</p>
+                    <div class="ai-highlight">
+                        <p>⭐ Standartinė kaina bus 4,99 € — testuotojams prieinamas NEMOKAMAI</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="section" style="padding-top: 0;">
-        <p class="section-title">Kaip tapti testuotoju</p>
+        <p class="section-title">Kaip prisijungti</p>
 
         <div class="steps">
             <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-content">
-                    <h3>Spustelėkite mygtuką</h3>
-                    <p>Spustelėkite "Tapti beta testuotoju" — būsite nukreipti į oficialų Google Play puslapį. Įsitikinkite, kad esate prisijungę prie Google paskyros, kurią naudojate Play Store.</p>
+                    <h3>Užpildykite anketą</h3>
+                    <p>Įveskite Gmail el. paštą ir patvirtinkite įsipareigojimą — 1 minutė.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-content">
-                    <h3>Priimkite kvietimą</h3>
-                    <p>Google Play puslapyje spustelėkite "Become a tester" ir parsisiųskite programėlę.</p>
+                    <h3>Gaukite kvietimą</h3>
+                    <p>Per 24 valandas atsiųsime oficialų Google Play kvietimą į jūsų el. paštą.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-content">
                     <h3>Išbandykite 14 dienų</h3>
-                    <p>Naudokite programėlę ir palikite ją įdiegtą visą laikotarpį. Po 7 dienų atsiųsime priminimą.</p>
+                    <p>Naudokite programėlę. Po 7 dienų atsiųsime priminimą.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-content">
                     <h3>Palikite atsiliepimą</h3>
-                    <p>Jūsų nuomonė tiesiogiai formuos galutinę programėlės versiją.</p>
+                    <p>Jūsų nuomonė tiesiogiai formuos galutinę versiją.</p>
                 </div>
             </div>
         </div>
@@ -362,23 +398,19 @@
             <h3>✅ Testuotojo patikrinimo sąrašas</h3>
             <div class="check-item">
                 <div class="check-box"></div>
-                <span>Prisijungiau per Google paskyrą (tą, kurią naudoju Play Store)</span>
+                <span>Prisijungiau per Google paskyrą kurią naudoju Play Store</span>
             </div>
             <div class="check-item">
                 <div class="check-box"></div>
-                <span>Spustelėjau "Become a tester" Google Play puslapyje</span>
+                <span>Priėmiau kvietimą ir įdiegiau programėlę</span>
             </div>
             <div class="check-item">
                 <div class="check-box"></div>
-                <span>Įdiegiau programėlę iš Google Play</span>
+                <span>Leisiu jai „gyventi" telefone 14 dienų — neatinstaliuosiu</span>
             </div>
             <div class="check-item">
                 <div class="check-box"></div>
-                <span>Leisiu jai "gyventi" telefone 14 dienų — neatinstaliuosiu</span>
-            </div>
-            <div class="check-item">
-                <div class="check-box"></div>
-                <span>Palikiau atsiliepimą po testavimo</span>
+                <span>Paliksiu atsiliepimą po testavimo</span>
             </div>
         </div>
 
@@ -399,10 +431,10 @@
 <div class="cta-section">
     <div class="spots-hero">🔥 Liko 8 vietos iš 12</div>
     <br><br>
-    <h2>Prisijunkite prie testavimo</h2>
-    <p>Padėkite sukurti geresnę programėlę pirmų susitikimų metu</p>
+    <h2>Tapkite pirmuoju</h2>
+    <p>Išbandykite programėlę kuri padės kito pasimatymo metu</p>
     <a href="https://forms.gle/QtV4YsG2vsoBnL8b7" class="cta-primary">
-        📝 Užsiregistruoti testuotoju
+        📝 Užsiregistruoti dabar
     </a>
     <br><br>
     <span class="cta-help">Kyla problemų? <a href="mailto:vaidotas.jankus@gmail.com" style="color: #7C6FE0;">vaidotas.jankus@gmail.com</a></span>
