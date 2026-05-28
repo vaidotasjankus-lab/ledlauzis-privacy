@@ -53,6 +53,18 @@
             margin: 0 auto 32px;
         }
 
+        .spots-hero {
+            display: inline-block;
+            background: rgba(255, 179, 71, 0.15);
+            border: 1px solid rgba(255, 179, 71, 0.4);
+            border-radius: 12px;
+            padding: 10px 24px;
+            color: #FFB347;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
         .cta-primary {
             display: inline-block;
             background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
@@ -68,7 +80,16 @@
         .cta-note {
             color: #4E5068;
             font-size: 12px;
+            display: block;
+            margin-bottom: 16px;
         }
+
+        .cta-help {
+            color: #8B8FA8;
+            font-size: 13px;
+        }
+
+        .cta-help a { color: #7C6FE0; text-decoration: none; }
 
         .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
 
@@ -116,6 +137,24 @@
         .feature-name { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 6px; }
         .feature-desc { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
 
+        .testimonial {
+            background: rgba(124, 111, 224, 0.08);
+            border: 1px solid rgba(124, 111, 224, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-text {
+            color: #F2F3FF;
+            font-size: 16px;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-author { color: #8B8FA8; font-size: 13px; }
+
         .steps { margin-bottom: 40px; }
 
         .step {
@@ -141,16 +180,45 @@
         .step-content h3 { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 4px; }
         .step-content p { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
 
-        .important-box {
-            background: rgba(255, 94, 125, 0.08);
-            border: 1px solid rgba(255, 94, 125, 0.25);
+        .mission-box {
+            background: rgba(78, 205, 196, 0.08);
+            border: 1px solid rgba(78, 205, 196, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .mission-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+        .mission-box p { color: #8B8FA8; font-size: 14px; line-height: 1.7; }
+        .mission-box strong { color: #F2F3FF; }
+
+        .checklist {
+            background: #1A1B26;
+            border: 1px solid #2E3048;
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 40px;
         }
 
-        .important-box h3 { color: #FF5E7D; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
-        .important-box p { color: #8B8FA8; font-size: 14px; line-height: 1.6; }
+        .checklist h3 { color: #F2F3FF; font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+
+        .check-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            color: #8B8FA8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .check-box {
+            min-width: 20px;
+            height: 20px;
+            border: 2px solid #7C6FE0;
+            border-radius: 4px;
+            margin-top: 2px;
+        }
 
         .safe-box {
             background: rgba(78, 205, 196, 0.08);
@@ -163,6 +231,14 @@
         .safe-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
         .safe-box ul { color: #8B8FA8; font-size: 14px; padding-left: 20px; line-height: 1.8; }
 
+        .privacy-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #7C6FE0;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
         .cta-section {
             text-align: center;
             padding: 60px 20px;
@@ -172,18 +248,6 @@
 
         .cta-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
         .cta-section p { color: #8B8FA8; margin-bottom: 32px; }
-
-        .spots {
-            display: inline-block;
-            background: rgba(255, 179, 71, 0.15);
-            border: 1px solid rgba(255, 179, 71, 0.3);
-            border-radius: 12px;
-            padding: 8px 20px;
-            color: #FFB347;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
 
         .footer {
             text-align: center;
@@ -205,13 +269,16 @@
     <div class="logo">❄️</div>
     <div class="badge">BETA TESTAVIMAS</div>
     <h1>Ledlaužis</h1>
-    <p class="subtitle">Pirmasis pažintinis susitikimas daugiau nebekels nerimo. Padėk mums patobulinti programėlę.</p>
+    <p class="subtitle">Pirmasis susitikimas su nauju žmogumi daugiau nekels nerimo. Padėk mums sukurti geriausią įrankį pasimatymams.</p>
     <br>
+    <div class="spots-hero">🔥 Liko 8 vietos iš 12</div>
+    <br><br>
     <a href="https://play.google.com/apps/internaltest/4701616950878468843" class="cta-primary">
         🚀 Tapti beta testuotoju
     </a>
     <br>
     <span class="cta-note">Nemokama · Oficialus Google Play testavimas · Saugi</span>
+    <span class="cta-help">Kyla problemų jungiantis? Parašykite: <a href="mailto:vaidotas.jankus@gmail.com">vaidotas.jankus@gmail.com</a></span>
 </div>
 
 <div class="container">
@@ -219,6 +286,11 @@
     <div class="section">
         <div class="problem-box">
             <p>Pirmasis susitikimas su nauju žmogumi — vienas <strong>nepatogiausių momentų</strong>. Tyla, nepatogi tema, nežinai ką sakyti. <strong>Ledlaužis</strong> sprendžia šią problemą — padeda pradėti pokalbį natūraliai ir džiaugsmingai.</p>
+        </div>
+
+        <div class="testimonial">
+            <p class="testimonial-text">„Per pirmą pasimatymą naudojau Pokalbių korteles — tyla dingo akimirksniu. Pasijutome kaip seni draugai."</p>
+            <span class="testimonial-author">— Beta testuotojas, Vilnius</span>
         </div>
 
         <p class="section-title">Ką rasite programėlėje</p>
@@ -255,7 +327,7 @@
                 <div class="step-num">1</div>
                 <div class="step-content">
                     <h3>Spustelėkite mygtuką</h3>
-                    <p>Spustelėkite "Tapti beta testuotoju" — būsite nukreipti į oficialų Google Play puslapį.</p>
+                    <p>Spustelėkite "Tapti beta testuotoju" — būsite nukreipti į oficialų Google Play puslapį. Įsitikinkite, kad esate prisijungę prie Google paskyros, kurią naudojate Play Store.</p>
                 </div>
             </div>
             <div class="step">
@@ -269,21 +341,45 @@
                 <div class="step-num">3</div>
                 <div class="step-content">
                     <h3>Išbandykite 14 dienų</h3>
-                    <p>Naudokite programėlę ir palikite savo atsiliepimą. Jūsų nuomonė padės ją patobulinti.</p>
+                    <p>Naudokite programėlę ir palikite ją įdiegtą visą laikotarpį. Po 7 dienų atsiųsime priminimą.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">4</div>
                 <div class="step-content">
                     <h3>Palikite atsiliepimą</h3>
-                    <p>Po 14 dienų pasidalinkite savo patirtimi — kas patiko, kas galėtų būti geriau.</p>
+                    <p>Jūsų nuomonė tiesiogiai formuos galutinę programėlės versiją.</p>
                 </div>
             </div>
         </div>
 
-        <div class="important-box">
-            <h3>⚠️ Svarbu žinoti</h3>
-            <p>Google Play reikalauja, kad programėlė būtų įdiegta jūsų telefone <strong>14 dienų iš eilės</strong>. Tai nėra vienkartinis atsisiuntimas — prašome palikti programėlę įdiegtą visą testavimo laikotarpį.</p>
+        <div class="mission-box">
+            <h3>🎯 Jūsų misija</h3>
+            <p>Testuotojai, kurie išlaiko programėlę <strong>14 dienų</strong>, prisideda prie to, kad Ledlaužis taptų patikimiausiu įrankiu pasimatymuose. <strong>Jūsų indėlis — tai geresni pasimatymai visiems.</strong></p>
+        </div>
+
+        <div class="checklist">
+            <h3>✅ Testuotojo patikrinimo sąrašas</h3>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Prisijungiau per Google paskyrą (tą, kurią naudoju Play Store)</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Spustelėjau "Become a tester" Google Play puslapyje</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Įdiegiau programėlę iš Google Play</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Leisiu jai "gyventi" telefone 14 dienų — neatinstaliuosiu</span>
+            </div>
+            <div class="check-item">
+                <div class="check-box"></div>
+                <span>Palikiau atsiliepimą po testavimo</span>
+            </div>
         </div>
 
         <div class="safe-box">
@@ -294,18 +390,22 @@
                 <li>Jūsų duomenys nesaugomi mūsų serveriuose</li>
                 <li>Galite bet kada pašalinti programėlę</li>
             </ul>
+            <a href="https://vaidotasjankus-lab.github.io/ledlauzis-privacy/" class="privacy-link">→ Skaityti privatumo politiką</a>
         </div>
     </div>
 
 </div>
 
 <div class="cta-section">
-    <div class="spots">🔥 Liko ribotas skaičius vietų</div>
+    <div class="spots-hero">🔥 Liko 8 vietos iš 12</div>
+    <br><br>
     <h2>Prisijunkite prie testavimo</h2>
     <p>Padėkite sukurti geresnę programėlę pirmų susitikimų metu</p>
     <a href="https://play.google.com/apps/internaltest/4701616950878468843" class="cta-primary">
         🚀 Tapti beta testuotoju
     </a>
+    <br><br>
+    <span class="cta-help">Kyla problemų? <a href="mailto:vaidotas.jankus@gmail.com" style="color: #7C6FE0;">vaidotas.jankus@gmail.com</a></span>
 </div>
 
 <div class="footer">
