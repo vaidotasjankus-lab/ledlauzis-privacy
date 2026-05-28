@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledlaužis — Tapk Beta Testuotoju</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0E0F16;
+            color: #F2F3FF;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1A1B26 0%, #0E0F16 100%);
+            border-bottom: 1px solid #2E3048;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .logo { font-size: 64px; margin-bottom: 16px; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(124, 111, 224, 0.15);
+            border: 1px solid rgba(124, 111, 224, 0.4);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #7C6FE0;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #8B8FA8;
+            font-size: 18px;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 12px;
+        }
+
+        .cta-note {
+            color: #4E5068;
+            font-size: 12px;
+        }
+
+        .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+        .section { padding: 60px 0; }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #F2F3FF;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .problem-box {
+            background: #1A1B26;
+            border: 1px solid #2E3048;
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+
+        .problem-box p {
+            color: #8B8FA8;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .problem-box strong { color: #F2F3FF; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: #1A1B26;
+            border: 1px solid #2E3048;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .feature-icon { font-size: 32px; margin-bottom: 12px; }
+        .feature-name { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 6px; }
+        .feature-desc { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
+
+        .steps { margin-bottom: 40px; }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            min-width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #FF5E7D, #7C6FE0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: white;
+        }
+
+        .step-content h3 { font-size: 15px; font-weight: 700; color: #F2F3FF; margin-bottom: 4px; }
+        .step-content p { font-size: 13px; color: #8B8FA8; line-height: 1.5; }
+
+        .important-box {
+            background: rgba(255, 94, 125, 0.08);
+            border: 1px solid rgba(255, 94, 125, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .important-box h3 { color: #FF5E7D; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+        .important-box p { color: #8B8FA8; font-size: 14px; line-height: 1.6; }
+
+        .safe-box {
+            background: rgba(78, 205, 196, 0.08);
+            border: 1px solid rgba(78, 205, 196, 0.25);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .safe-box h3 { color: #4ECDC4; font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+        .safe-box ul { color: #8B8FA8; font-size: 14px; padding-left: 20px; line-height: 1.8; }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1A1B26 0%, #0E0F16 100%);
+            border-top: 1px solid #2E3048;
+        }
+
+        .cta-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+        .cta-section p { color: #8B8FA8; margin-bottom: 32px; }
+
+        .spots {
+            display: inline-block;
+            background: rgba(255, 179, 71, 0.15);
+            border: 1px solid rgba(255, 179, 71, 0.3);
+            border-radius: 12px;
+            padding: 8px 20px;
+            color: #FFB347;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            border-top: 1px solid #2E3048;
+            color: #4E5068;
+            font-size: 12px;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 32px; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="logo">❄️</div>
+    <div class="badge">BETA TESTAVIMAS</div>
+    <h1>Ledlaužis</h1>
+    <p class="subtitle">Pirmasis pažintinis susitikimas daugiau nebekels nerimo. Padėk mums patobulinti programėlę.</p>
+    <br>
+    <a href="https://play.google.com/apps/internaltest/4701616950878468843" class="cta-primary">
+        🚀 Tapti beta testuotoju
+    </a>
+    <br>
+    <span class="cta-note">Nemokama · Oficialus Google Play testavimas · Saugi</span>
+</div>
+
+<div class="container">
+
+    <div class="section">
+        <div class="problem-box">
+            <p>Pirmasis susitikimas su nauju žmogumi — vienas <strong>nepatogiausių momentų</strong>. Tyla, nepatogi tema, nežinai ką sakyti. <strong>Ledlaužis</strong> sprendžia šią problemą — padeda pradėti pokalbį natūraliai ir džiaugsmingai.</p>
+        </div>
+
+        <p class="section-title">Ką rasite programėlėje</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🃏</div>
+                <div class="feature-name">Pokalbių kortelės</div>
+                <div class="feature-desc">Chill, Giliau ir Drąsiau kategorijos. Kiekviena su psichologo pastaba.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-name">Telepatijos testas</div>
+                <div class="feature-desc">Ar jūsų mintys skrieja tuo pačiu dažniu? Sužinokite kartu.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🫂</div>
+                <div class="feature-name">Santykių SOS</div>
+                <div class="feature-desc">Psichologo patarimai ir akių kontakto iššūkis.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <div class="feature-name">AI Vibe</div>
+                <div class="feature-desc">Dirbtinis intelektas generuoja ledlaužius pagal jūsų situaciją.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding-top: 0;">
+        <p class="section-title">Kaip tapti testuotoju</p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h3>Spustelėkite mygtuką</h3>
+                    <p>Spustelėkite "Tapti beta testuotoju" — būsite nukreipti į oficialų Google Play puslapį.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h3>Priimkite kvietimą</h3>
+                    <p>Google Play puslapyje spustelėkite "Become a tester" ir parsisiųskite programėlę.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h3>Išbandykite 14 dienų</h3>
+                    <p>Naudokite programėlę ir palikite savo atsiliepimą. Jūsų nuomonė padės ją patobulinti.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h3>Palikite atsiliepimą</h3>
+                    <p>Po 14 dienų pasidalinkite savo patirtimi — kas patiko, kas galėtų būti geriau.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="important-box">
+            <h3>⚠️ Svarbu žinoti</h3>
+            <p>Google Play reikalauja, kad programėlė būtų įdiegta jūsų telefone <strong>14 dienų iš eilės</strong>. Tai nėra vienkartinis atsisiuntimas — prašome palikti programėlę įdiegtą visą testavimo laikotarpį.</p>
+        </div>
+
+        <div class="safe-box">
+            <h3>✓ Tai 100% saugu</h3>
+            <ul>
+                <li>Oficialus Google Play testavimo procesas</li>
+                <li>Programėlė nemokama testuotojams</li>
+                <li>Jūsų duomenys nesaugomi mūsų serveriuose</li>
+                <li>Galite bet kada pašalinti programėlę</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="cta-section">
+    <div class="spots">🔥 Liko ribotas skaičius vietų</div>
+    <h2>Prisijunkite prie testavimo</h2>
+    <p>Padėkite sukurti geresnę programėlę pirmų susitikimų metu</p>
+    <a href="https://play.google.com/apps/internaltest/4701616950878468843" class="cta-primary">
+        🚀 Tapti beta testuotoju
+    </a>
+</div>
+
+<div class="footer">
+    <p>© 2026 Ledlaužis · <a href="https://vaidotasjankus-lab.github.io/ledlauzis-privacy/" style="color: #7C6FE0;">Privatumo politika</a></p>
+</div>
+
+</body>
+</html>
